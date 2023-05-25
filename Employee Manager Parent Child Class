@@ -1,0 +1,75 @@
+/** Parent Class
+public class Employee {
+
+  private String name; 
+  private int salary;
+
+  public Employee(String name, int salary){
+    this.name = name; 
+    this.salary = salary;
+  }
+
+  public String getName(){
+    return name;
+  }
+
+  public int getTotalCompensation(){
+    return salary;
+  }
+
+  public void getSalary(int s) {
+    salary=s;
+  }
+
+  public String toString(){
+    return name + " - $" + getTotalCompensation();
+  }
+}
+
+/** Subclass 
+public class Manager extends Employee {
+
+  private int bonus; 
+
+  public Manager(String name, int salary, int bonus){
+    super(name,salary);
+    this.bonus = bonus;
+  }
+
+  public void setBonus(int b){
+    bonus = b;
+  }
+
+  public int getTotalCompensation(){
+      return super.getTotalCompensation() + bonus;
+  }
+}
+
+//* Tester 
+public class EmployeeTester{
+
+    public static void main(String[] args){
+
+        Employee e = new Employee("Tammy Oram", 75000); 
+        System.out.println(e.getName());
+        System.out.println(e.getTotalCompensation());
+        System.out.println(e);
+
+        Manager m = new Manager("Rodrigo Oram", 5, 1000000);
+        System.out.println(m.getName());
+        System.out.println(m.getTotalCompensation());
+        System.out.println(m);
+
+
+        Employee e2 = m;
+
+
+        /* Can't do this, because setBonus is not 
+        defined within Employee - the type of the 
+        variable
+        */
+        //e2.setBonus(55);
+
+        System.out.print(e2.getTotalCompensation());
+    }
+}
