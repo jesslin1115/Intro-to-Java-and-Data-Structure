@@ -1,0 +1,25 @@
+import java.util.Scanner; 
+
+public class IfTest3 {
+
+    public static void main (String[] args) {
+
+        Scanner s = new Scanner(System.in); 
+        System.out.print("What is the answer: "); 
+        int ans = s.nextInt(); 
+
+        if(ans == 42) {
+            System.out.println("You've found it!");
+        } else if (ans==41) {
+            System.out.println("You are close...."); 
+        } else if (ans==43) {
+            System.out.println("You are close...."); 
+        } else {
+            System.out.println("keep looking");
+            //Unconditioned
+        }
+
+        System.out.println("This is the end!");
+    }
+
+}
