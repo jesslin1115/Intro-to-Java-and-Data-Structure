@@ -1,0 +1,32 @@
+import java.util.Scanner; 
+
+/* A Hello World program that greets you personally
+*class name starts with a CAP letter
+*println vs print --> ln goes on to the next line
+*Scanner: class nanme starts with CAP letter, read files
+*Class: template for objects (can manipulate)
+*input is a variable that have reference to the object created
+*only allow to declare variable once, but can assign it many times
+*/
+
+public class HelloYou {
+
+    public static void main(String[] args) {
+    
+        Scanner input = new Scanner(System.in);
+        // a vairable exist for the new object created
+        //input: a vairbale for reference to the object created
+        
+        System.out.print("What is your name:");
+        //println: will go to the next line 
+        //print: will be on the same line
+        
+        String name;
+        name = input.nextLine();
+
+        System.out.println("Hello " + name + "!");
+        
+
+    }
+
+}
