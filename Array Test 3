@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class ArrayTest3 {
+ 
+    public static void main(String[] args) {
+
+        Scanner s = new Scanner(System.in);
+        System.out.print("How much do you want to give? ");
+        int size = s.nextInt();
+
+        double[] vals = new double[size];
+
+        for(int i=0;i<vals.length;i++) {
+            System.out.print("Next number: ");
+            vals[i] = s.nextDouble();
+        }
+
+        System.out.println(average(vals));
+    }
+
+     public static double average(double[] a) {
+
+        double sum = 0.0;
+        
+        for(int i=0;i<a.length;i++) {
+          sum += a[i];
+        }
+
+        return sum/a.length;
+      }
+
+}
