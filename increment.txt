@@ -1,0 +1,27 @@
+int i = 5; 
+
+i = i + 1; 
+
+i += 2; 
+
+i -= 3; 
+i *= 45; 
+
+i++ (plus 1)
+i-- (minus 1)
+
+++i 
+--i 
+
+int a = 5; 
+int b = 20; 
+int c; 
+
+c = ++a + b (a becomes 6 before the evaluation)
+// c is 26 
+
+a = 5;
+b = 20; 
+
+c = a++ + b; 
+// c is 25 (evaluated with orginal value of a, then a will become 6)
