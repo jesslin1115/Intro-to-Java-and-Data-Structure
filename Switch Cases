@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class AnimalLine {
+
+    public static void main(String[] args) {
+
+     Scanner s = new Scanner(System.in);
+
+     System.out.println("1. cat");
+     System.out.println("2. dog");
+     System.out.println("3. cow");
+     System.out.println("4. fish");
+     System.out.println("5. bird");
+     System.out.println("6. dinosaur");
+     System.out.println("7. human");
+
+     int choice = s.nextInt();
+     
+     switch(choice) {
+  
+        case 1:
+          System.out.println("Meow");
+          break;
+        case 2:
+          System.out.println("Woof");
+          break;
+        case 3:
+          System.out.println("Moo");
+          break;
+        case 4:
+          System.out.println("Glub Glub");
+          break;
+        case 5:
+        case 6:
+          System.out.println("Chirp");
+          break;
+        case 7:
+           System.out.println("Hello how can I help you.");
+            break;
+        default:
+           System.out.println("No such animal, goodbye;");
+           break;
+       }
+     }
+}
