@@ -1,0 +1,24 @@
+import java.util.Scanner; 
+
+public class IfTest5 {
+
+    public static void main (String[] args) {
+
+        Scanner s = new Scanner(System.in); 
+        System.out.print("What is the answer: "); 
+        double ans = s.nextDouble(); 
+
+        if(ans == 42) {
+            System.out.println("You've found it!");
+        } else if (ans >= 41 && ans <= 43) {
+          //&& = and; between 41 and 43 
+          //Do not write 41 <= ans <= 43 -> will evaluate the first part first, if T, T is 1 in boolean or F is 0 in boolean
+          //the second part will always evaluate to T 
+            System.out.println("You are close...."); 
+        } else {System.out.println("keep looking");
+
+        }
+        System.out.println("This is the end!");
+    }
+
+}
