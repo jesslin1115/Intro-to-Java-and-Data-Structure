@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class ForTest4 {
+
+    public static void main(String[] args) {
+
+      Scanner s = new Scanner(System.in);
+      int counter = 0;
+      int sum = 0;
+      int value; 
+          
+          for(; ;){
+              System.out.print("Enter s number (negative to stop): ");
+              value = s.nextInt(); 
+
+              if(value<0) {
+                  break;
+              }
+
+              sum += value; 
+              counter++;
+          }
+       
+          System.out.println((double)sum/counter);
+      
+    }
+
+}
