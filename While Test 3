@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class WhileTest3 {
+
+    public static void main(String[] args) {
+
+      Scanner s = new Scanner(System.in);
+      int counter = 0;
+      int sum = 0;
+      int value; 
+      //declare and instantitate
+
+          while (true) {
+          //same as for(;;)
+          //Condition of while loop has to be a boolean
+              System.out.print("Enter s number (negative to stop): ");
+              value = s.nextInt(); 
+
+              if(value<0) {
+                  break;
+                  //break out of the closest loop, the loop will stop and jump out of the current loop and continue with the rest of program
+              }
+
+              sum += value; 
+              counter++;
+          }
+       
+          double avg = ((double)sum/counter);
+          System.out.println("Average = " + avg);
+
+    }
+
+}
