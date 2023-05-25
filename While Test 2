@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class WhileTest2 {
+
+    public static void main(String[] args) {
+
+      Scanner s = new Scanner(System.in);
+      int counter; 
+      int sum = 0;
+
+      System.out.print("Enter s number (negative to stop): ");
+          int value = s.nextInt(); 
+
+          while (value>=0) {
+          //loop back until neg int is entered 
+              sum += value; 
+              //sum = sum + value
+              counter++;
+
+              System.out.println("Enter a number (negative to stop): "): 
+              value = s.nextInt();
+
+          }
+
+          System.out.println((double)sum/counter);
+          //double: casting, forced into a double 
+      
+    }
+
+}
