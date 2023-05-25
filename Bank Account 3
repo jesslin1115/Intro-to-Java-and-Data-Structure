@@ -9,9 +9,16 @@ public class BankAccount3{
     public BankAccount3(double b){
         balance = b;
     }
+    
+    //Same Constructor as above 
+    public BankAccount3(double balance){
+        this.balance = balance; 
+        //this balance is refering to the instance variable 
+        //balance is refering to local variable 
 
     //Default Constructor
     //If no initial amount was assigned, the bank account's balance is 0
+    //() implicitive parameter
     public BankAccount3() {
         balance = 0;
     }
