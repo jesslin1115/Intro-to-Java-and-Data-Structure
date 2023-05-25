@@ -1,0 +1,49 @@
+import java.awt.Rectangle; 
+
+public class RecTest {
+
+    public static void main(String[] args) {
+
+      Rectangle a = new Rectangle(10,10,100,1000);
+      // (x,y, width,height)
+      //(x,y) --> upper left corner
+      //declaring a varaible 'a' as a Rectangle-typed object 
+      Rectangle b;
+      b = new Rectangle(1,1,10,10);
+      //two ways to declare Rectangle objects 
+
+      System.out.println(a.getX() + " " + a.getY());
+      //10.0 10.0
+      System.out.println(a.getWidth() + " " + a.getHeight());
+      //100.0 1000.0
+
+      a.translate(5,20);
+      //mutate method (modify x, y) 
+
+      System.out.println(a.getX() + " " + a.getY() );
+      //15.0 30.0
+
+      Rectangle c = b;
+      //create a new Rectangle object c and set it to object b 
+      System.out.println(c.getX() + " " + c.getY() );
+      //1.0 1.0
+      System.out.println(c.getWidth() + " " + c.getHeight());
+      //10.0 10.0
+
+      b.translate(5,6); 
+      System.out.println(c.getX() + " " + c.getY() );
+      //6.0 7.0
+      // mutating b also changed c --> object reference...still referencing to the same memory box ///////
+
+      int x = 5; 
+      int y = x; 
+      x=23;
+      System.out.println(y);
+      //5
+      // distinct difference when working with object and primitive 
+      // mutating x didn't change  y 
+      //for primitive, two seperate memoery box are created for x and y; if you change x or y, it does not impact the other 
+    }
+
+}
+
