@@ -1,0 +1,30 @@
+import java.util.ArrayList; 
+
+public class Wrapper2{
+
+  public static void main(String[] args){
+
+    ArrayList<Integer> a = new ArrayList<>();
+
+    a.add(35); 
+
+    int x = a.get(0);
+    Integer xClass = a.get(0); 
+
+    ArrayList<Double> b = new ArrayList<>(); 
+
+    //Float 
+    //Byte 
+    //Character
+
+    String s = "15"; 
+    int sInt = Integer.parseInt(s); 
+    //convert number 15 as an int 
+    System.out.println(sInt+1);
+    //will print out 15 + 1 as an int
+
+  }
+
+
+
+}
