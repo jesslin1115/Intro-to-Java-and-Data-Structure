@@ -1,0 +1,42 @@
+import java.util.Arrays;
+
+public class StringTester {
+
+  public static void main(String[] args){
+
+    String x = "hello"; 
+
+    for(int i=0;i<x.length();i++){
+      System.out.println(x.charAt(i));
+    }
+
+    System.out.println(x.charAt(0));
+
+    System.out.println(x.substring(0,5));
+    
+    String y = "world"; 
+
+    int result = x.compareTo(y); 
+    //System.out.println(result);
+    if(result<0){
+      System.out.println("x < y"); 
+    }
+    else if(result>0){
+      System.out.println("x > y");
+    } 
+    else{
+      System.out.println("x == y");
+    }
+  
+    String[] colors = {"red", "green", "blue", "orange"}; 
+
+    Arrays.sort(colors); 
+
+    for(String c:colors) {
+      System.out.println(c);
+    }
+  
+  }
+
+
+}
