@@ -1,0 +1,19 @@
+public class Enhance{
+
+  public static void main(String[] args) {
+
+      int[] a = {5, 21, 6, 2, 3};
+
+      for(int i : a){
+        System.out.println(i); 
+      }
+
+      String[] n= {"hi", "my", "null"}; 
+
+      for(String s: n){
+        System.out.println(s);
+      }
+
+  }
+
+}
