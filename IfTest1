@@ -1,0 +1,22 @@
+import java.util.Scanner; 
+
+public class IfTest {
+
+    public static void main (String[] args) {
+
+        Scanner s = new Scanner(System.in); 
+        //create a scanner object 
+        System.out.print("What is the answer: "); 
+        int ans = s.nextInt();
+        //Scanner reads the next Integer; we can also use s.nextLine for string  
+
+        if(ans == 42) {
+            System.out.println("You've found it!");
+        } else{System.out.println("keep looking");
+
+        }
+
+        System.out.println("This is the end!");
+    }
+
+}
