@@ -1,0 +1,55 @@
+/** BankAccount is a class that simulates a bank account. */
+public class BankAccount {
+
+    //instance variable 
+    //private double balance = 10.0; // initial balance of 10.0 
+    private double balance; // alternative if you want to 
+                                  // initialize it to something else 
+                                  
+    //Methods (instance methods)
+    /** Method to withdraw money from the bank account. 
+      @param amount The amount to be withdrawn 
+    */ 
+    public void withdraw(double amount){
+        balance = balance - amount; 
+    }
+
+    /** Method to deposit money in the bank account 
+      @param amount The amount of money to be deposited 
+    */ 
+    public void deposit(double amount){
+        balance += amount; 
+    }
+
+    /** Method to return the current balance 
+        @return The current balance
+      */ 
+
+      public double getBalance() {
+        return balance;
+      }
+}
+
+/** BankAccountTester 
+public class BankAccountTester {
+
+    public static void main(String[] args) {
+        BankAccount a = new BankAccount();
+        //will be set to 10 as default 
+        BankAccount b = new BankAccount();
+
+        System.out.println(a.getBalance());
+        //10.0
+        
+        a.deposit(100);
+        System.out.println(a.getBalance()); 
+        //110.0
+        a.withdraw(50); 
+        a.withdraw(3.5); 
+        System.out.println(a.getBalance());
+        //56.5
+        System.out.println(b.getBalance());
+        //10.0
+    }
+
+}
