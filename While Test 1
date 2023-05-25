@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class WhileTest {
+
+    public static void main(String[] args) {
+
+      Scanner s = new Scanner(System.in); 
+      System.out.print("How high?"); 
+      int limit = s.nextInt();
+      //this scanner will read in the limit
+
+      //indefinite loop: run until the condition becomes false 
+      int counter = 1;
+      //1: starting
+
+      while( counter <= limit) {
+      //2:() condition
+      // condition is tested at each iteration of the loop at beginning...if T, loop begins; if F, loop starts
+          if(counter!=13){
+          System.out.println(counter); 
+          }
+          counter++;
+          //3: if we don't increment counter, this will be a infinite loop, printing 1, 1, ....1, ....
+      }
+
+    }
+
+}
