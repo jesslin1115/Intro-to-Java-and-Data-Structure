@@ -1,0 +1,17 @@
+import java.util.Scanner;
+ 
+public class ForTest1 {
+    
+    public static void main(String[] args) {
+
+     Scanner s = new Scanner(System.in);
+     System.out.print("How high? ");
+     int limit = s.nextInt();
+
+    for(int i=1;i<=limit;i++) {
+      System.out.println(i);
+     }
+    // i doesn't exist outside of the for loop
+    //System.out.println("Final i: " + i);
+    }
+}
