@@ -1,0 +1,44 @@
+public class Country implements Comparable<Country>{
+
+  private String name; 
+  private int area; 
+  private int population; 
+
+  public Country(String n, int a, int p){
+    name=n; 
+    area=a; 
+    population=p;
+  }
+
+  public String toString(){
+    return name + "-" + area + "sq miles - population: "
+    +population;
+  }
+
+  public int compareTo(Country other){
+    return population - other.population; 
+  }
+
+}
+
+/** Country Tester 
+import java.util.Arrays;
+
+public class CountryTester{
+
+  public static void main(String[] args){
+
+    Country[] countries = new Country[3]; 
+    countries[0] = new Country("Mexico", 760000, 130000000);
+    countries[1] = new Country("Canada", 3855000, 40000000);
+    countries[2] = new Country("Monaco", 1, 40000); 
+
+    Arrays.sort(countries); 
+
+    for(Country c:countries) {
+        System.out.println(c); 
+    }
+
+  }
+
+}
