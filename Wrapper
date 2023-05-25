@@ -1,0 +1,23 @@
+import java.util.ArrayList; 
+
+public class Wrapper{
+
+  public static void main(String[] args){
+
+    ArrayList<Integer> a = new ArrayList<>(); 
+
+    a.add(51); 
+    a.add(25); 
+    a.add(0); 
+
+    for(int i :a){ 
+      System.out.println(i);
+
+    }
+
+    System.out.println(a);
+
+  }
+
+
+}
