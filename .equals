@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class YesNo {
+
+    public static void main(String[] args) {
+
+    Scanner s = new Scanner(System.in);
+
+    System.out.print("Is a hotdog a sandwich? ");
+     String ans = s.nextLine();
+
+    if(ans.equals("yes")) {
+        System.out.println("You understand hotdogs correctly.");
+    } else if(ans.equals("no")) {
+        System.out.println("What about a hero sandwich, they don't cut that
+      bread all the way");
+     } else {
+        System.out.println("Huh?");
+     }
+  }
+}
