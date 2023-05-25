@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class WhileTest4 {
+
+  public static void main(String[] args) {
+
+    Scanner s = new Scanner(System.in);
+    System.out.print("How high? ");
+    int limit = s.nextInt();
+
+    int counter = 1;
+
+    while( counter <= limit ) {
+      if(counter==13) {
+      counter++;
+      continue;
+    }
+
+    System.out.println(counter);
+    counter++;
+    }
+  
+  /*
+  // gets stuck at 13 in an infinite loop
+    while(counter <= limit) {
+    if(counter!=13) {
+    System.out.println(counter);
+    counter++;
+  }
+}
+*/
+
+/*
+// not going to work because always stops at 13 (printing through 12)
+    while( counter <= limit && counter!=13) {
+      System.out.println(counter);
+    counter++;
+    }
+  */
+  
+  }
+}
