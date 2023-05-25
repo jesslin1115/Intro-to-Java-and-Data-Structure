@@ -1,0 +1,23 @@
+import java.util.Random; 
+
+public class RandomTest1 {
+
+  public static void main(String[] args){
+  
+    double x = Math.random();
+    //inherited from java.lang 
+    //will return double between 0 and 1, including 0, excluding 1 
+    System.out.println("x = " + x); 
+
+    Random r = new Random ();
+    //variable r has to be instantitated, not a static class
+    double y = r.nextDouble();
+    //will return random double inclusive of 0 and exclusive of 1 
+    System.out.println("y = " + y);
+
+    int a = r.nextInt(3);
+    //generate a random integer, including 0, excluding 3 (0, 1, 2)
+    System.out.println("a = " + a);
+  }
+
+}
