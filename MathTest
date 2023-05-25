@@ -1,0 +1,55 @@
+import java.util.Scanner;
+
+public class MathTest2 {
+
+    public static void main(String[] args) {
+
+        float a; 
+        double b;
+
+        b = 3.5; 
+        // a = 3.5; // lossy conversion
+        a = 3.5f;
+
+        double x = 3.0; 
+        double y = x/2; 
+        System.out.println("y = " + y);
+        // y = 1.5
+
+        y = 3/2; 
+        System.out.println("y = " + y);
+        //y = 1 
+
+        y = (double)3/2; 
+        System.out.println("y = " + y);
+        // casting(left) = double 3.0 / 2 = 1.5 --> y = 1.5
+
+        y = (double)3/2; 
+        System.out.println("y = " + y);
+        // this will evaluate 3/2 first, which is 1, then double(1) = 1.0 --> y = 1.0
+
+        int c = (int)3.5;
+        System.out.println("c = " + c);
+        // c = 3
+
+        System.out.println(3.0/0);
+
+        // some other helpful functions 
+        b = 3.4; 
+        double result1 = Math.floor(b);
+        System.out.println(result1);
+        // round to 3
+        double result2 = Math.ceil(b);
+        System.out.println(result2);
+        // round to 4
+        double result3 = Math.round(b);
+        System.out.println(result3);
+        //round to 4 
+
+        System.out.println(Math.sin(Math.PI/2));
+        System.out.println(Math.sin(Math.PI));
+
+        System.out.println(Math.abs(-3.5));
+
+        Scanner s = new.Scanner(System.in)
+        double z = s.nextDouble();
