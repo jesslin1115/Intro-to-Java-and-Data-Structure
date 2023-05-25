@@ -1,0 +1,62 @@
+/** BankAccount2 is a class that simulates a bank account. 
+*/ 
+
+public class BankAccount2{
+
+    //Instance variable 
+    private double balance;
+
+
+    //Constructor(s)
+    public BankAccount2(double b) {
+        balance = b;
+    }
+
+    //Methods (instance methods)
+    /*Method to withdraw money from bank account. 
+        @param amount The amount to be withdrawn.
+    */
+    public void withdraw(double amount) {
+        balance = balance - amount;
+    }
+
+    /** Method to deposit money from bank account. 
+        @param amount The amount to be deposited.
+    */ 
+    public void deposit(double amount) {
+        balance += amount;
+    }
+
+    /** Method to return the current balance 
+        @return The current balance.
+      */ 
+
+      public double getBalance() {
+        return balance;
+      }
+
+}
+
+public class BankAccount2Tester {
+
+    public static void main(String[] args) {
+        BankAccount2 a = new BankAccount2(150);
+        // bank account a has an initial balance of 150 
+        //BankAccount2 b = new BankAccount2();
+        // can't do the above because no overloaded Constructor
+
+        System.out.println(a.getBalance());
+        //150.0
+
+        a.deposit(100);
+        System.out.println(a.getBalance()); 
+        //250.0
+
+        a.withdraw(50); 
+        a.withdraw(3.5); 
+        System.out.println(a.getBalance());
+        //196.5
+    
+    }
+
+}
