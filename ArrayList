@@ -1,0 +1,35 @@
+import java.util.ArrayList; 
+
+public class ArrayListTester{
+
+  public static void main(String[] args) {
+    
+    ArrayList<String> a = new ArrayList<>();
+
+    a.add("Julie"); 
+    a.add("John"); 
+    a.add("Jenny"); 
+    
+    for(int i = 0;i<a.size();i++){
+        System.out.println(a.get(i));
+    }
+
+    a.add(1,"Paul"); 
+
+    for (String n:a){
+        System.out.println(n);
+    }
+
+    a.set(1,"Peter");
+
+    for (String n:a){
+        System.out.println(n);
+    }
+
+    a.remove(1); 
+
+    System.out.println(a);
+  }
+
+
+}
