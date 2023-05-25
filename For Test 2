@@ -1,0 +1,24 @@
+import java.util.Scanner; 
+
+public class ForTest2 {
+
+    public static void main(String[] args) {
+
+        Scanner s = new Scanner(System.in); 
+        System.out.print("How high?"); 
+        int limit = s.nextInt(); 
+        int i;
+
+        for(i= 1; i<=limit; i++) {
+            System.out.println(i);
+        }
+
+        System.out.print("Final i: " +i);
+
+        for(i=1;i<=limit;i+=2){
+            System.out.println(i);
+        }
+
+    }
+
+}
