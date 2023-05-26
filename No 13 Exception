@@ -1,0 +1,76 @@
+/** No 13 exception 
+public class No13Exception extends Exception {}
+
+/** No 13 
+public class No13 {
+
+   private int value = 0;
+
+    public void setValue(int v) throws No13Exception {
+      if(v==13) {
+        throw new No13Exception();
+      }
+
+      value = v;
+    }
+  
+    public int getValue() {
+      return value;
+    }
+}
+
+/** No 13 Tester 
+import java.util.Scanner;
+
+public class No13Tester {
+  
+    public static void main(String[] args) {
+  
+        No13 t = new No13();
+        Scanner s = new Scanner(System.in);
+        boolean validValue = false;
+  
+        while(!validValue) {
+            System.out.print("Give # (no 13 please): ");
+            int x = s.nextInt();
+            try {
+                t.setValue(x);
+                validValue = true;
+             } catch(No13Exception e) {
+                System.err.println("Hey, what did I tell you about 13's.");
+            }
+  
+        }
+        System.out.println(t.getValue());
+    }
+}
+
+/** Exception Tester 
+public class ExceptionTester{
+
+  public static void main(String[]args){
+
+
+    String t = null;
+    int[] a = {3, 6, 21, 14};
+
+    try{
+      System.out.println("No oops yet.");
+      System.out.println(t.charAt(25));
+      System.out.println(a[5]);
+      System.out.println(t.charAt(0));
+      System.out.print("Post oops");
+    } catch(NullPointerException e){
+      System.out.println("oops");
+    } catch(ArrayIndexOutOfBoundsException e){
+      System.out.println("oops 2")
+    }catch(RunTimeException e){
+      System.out.println("General oops");
+    }
+
+
+    
+
+    System.out.println("The End.");
+  }
+}
