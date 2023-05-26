@@ -12,8 +12,7 @@ public class MyArrayList<E>{
       }
 
       array[theSize++] = element;
-  }
-
+  } 
 
   public E get(int i){
     return array[i];
