@@ -1,0 +1,59 @@
+public class MyArrayList<E>{
+
+  @SuppressWarnings("unchecked")
+  public MyArrayList(){
+
+      array = (E[]) new Object[INITCAPACITY]; 
+  }
+
+  public void add(E element){
+      if(theSize = array.length){
+        grow(array.length*2); 
+      }
+
+      array[theSize++] = element;
+  }
+
+
+  public E get(int i){
+    return array[i];
+  }
+
+
+  public E get(int i, E element){
+    E oldValue = array[i]; 
+    
+  }
+  public int size(){ 
+    return theSize;
+  }
+
+  @SuppressWarnings("unchecked")
+  private void grow(int newCapacity){
+    if(newCapacity<array.length){
+      return;
+    }
+
+    E[] newArray = (E[]) new Object[newCapacity]; 
+
+    //Copy the old values over 
+    for(int i = 0; i < theSize; i++){
+        newArray[i] = array [i];
+
+    }
+
+    array = newArray;
+  }
+
+
+
+  //constant 
+  public static final int INITCAPACITY = 10; 
+
+
+  // instance variables 
+  private int theSize = 0; 
+  private E[] array;
+
+
+}
