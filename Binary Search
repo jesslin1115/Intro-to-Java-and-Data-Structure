@@ -27,3 +27,26 @@ public class BinarySearch{
     }
 
 }
+
+/** BS Tester 
+import java.util.Arrays;
+
+public class BSTester{
+
+  public static void main(String[] args){
+
+    int[] numbers = {3, 7, 2, 1, 5, 6};
+
+    Array.sort(numbers);
+
+    for(int i: numbers){
+      System.out.println(i); 
+    }
+
+    int loc = BinaraySearch.binarySearch(numbers,5); 
+    System.out.println("5 appears at " + loc)
+    int loc = BinaraySearch.binarySearch(numbers,8); 
+    System.out.println("8 appears at " + loc)
+  }
+
+}
