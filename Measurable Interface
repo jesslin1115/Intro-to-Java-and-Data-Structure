@@ -1,0 +1,104 @@
+/** Create Measurable Interface 
+public interface Measurable {
+//not a class, can not be instantiated
+
+  public double measure(); 
+    
+}
+
+/** Cup class that implements Measurable 
+public class Cup implements Measurable{
+
+    double capacity; 
+    double contents = 0; 
+
+    public Cup(double capacity){
+        this.capacity = capacity; 
+    }
+
+    public double getCapacity(){
+        return capacity;
+    }
+
+    public double getContents(){
+      return contents;
+    }
+
+    public void fill(double amount){
+      contents += amount; 
+      if(contents > capacity){
+        this.capacity = capacity;
+      }
+    }
+
+    public void empty(double amount){
+      contents -= amount; 
+      if(contents < 0){
+        contents = 0;
+      }
+    }
+    
+    public double measure(){
+
+      return getContents();
+    }
+
+}
+
+/** Duck class that implements Measurable 
+public class Duck implements Measurable{
+
+  private String name; 
+  private double weight;  
+
+  public Duck(String name, double weight){
+      this.name=name; 
+      this.weight=weight; 
+  }
+
+  public String getName(){
+    return name;
+  }
+
+  public double getWeight(){
+    return weight;
+  }
+
+  public void quack(){
+    System.out.println("QUACK!!!");
+  }
+
+  public double measure(){
+    return getWeight;
+  }
+
+}
+
+/** MeasureTest 
+public class Duck implements Measurable{
+
+  private String name; 
+  private double weight;  
+
+  public Duck(String name, double weight){
+      this.name=name; 
+      this.weight=weight; 
+  }
+
+  public String getName(){
+    return name;
+  }
+
+  public double getWeight(){
+    return weight;
+  }
+
+  public void quack(){
+    System.out.println("QUACK!!!");
+  }
+
+  public double measure(){
+    return getWeight;
+  }
+
+}
