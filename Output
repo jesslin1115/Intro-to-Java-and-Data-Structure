@@ -1,0 +1,87 @@
+/** Output Tester 1
+import java.io.PrintWriter;
+import java.io.FileNotFoundException;
+
+public class OutputTester {
+    public static void main(String[] args)
+      throws FileNotFoundException {
+   
+      PrintWriter output = new PrintWriter( args[0] );
+
+      int x = 10;
+      double y = 71.5;
+      output.print(x);
+      output.print(y);
+      output.println("");
+      output.println("");
+      output.println(x);
+      output.println(y);
+      output.close();
+    }
+}
+
+
+/** Output text 1 
+1071.5
+10
+71.5
+
+/** Output Tester 2 
+import java.io.PrintWriter;
+import java.io.FileNotFoundException;
+
+public class OutputTester2 {
+    
+    public static void main(String[] args)
+      throws FileNotFoundException {
+
+      PrintWriter output = new PrintWriter( args[0] );
+    
+      int x = 10;
+      double y = 71.5;
+      
+      output.println("x is " + x + " y is " + y);
+      output.println("Goodbye");
+      
+      output.close();
+    }
+}
+
+/** Output text 2 
+x is 10 y is 71.5
+Goodbye
+
+/** Output Tester 3
+import java.io.PrintWriter;
+import java.io.FileNotFoundException;
+
+  public class OutputTester3 {
+    
+    public static void main(String[] args)
+      throws FileNotFoundException {
+      
+      PrintWriter output = new PrintWriter( args[0] );
+      
+      int x = 10;
+      double y = 71.1515151617;
+      
+      output.printf("Hello");
+      output.printf("World");
+      output.printf("\n");
+      output.printf("\nHello World\n");
+      
+      output.printf("Hello\tWorld\n");
+      output.printf("\\\n");
+      
+      output.printf("X: %d, Y: %.3f\n",x-1,y);
+      
+      output.close();
+    }
+}
+
+/** Output Text 3 
+HelloWorld
+Hello World
+Hello World
+\
+X: 9, Y: 71.152
