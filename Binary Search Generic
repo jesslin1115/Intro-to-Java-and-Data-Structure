@@ -1,0 +1,30 @@
+public class BinarySearchGeneric{
+
+    public static <E extends Comparable<E>>
+       int binarySearch(E[]a, E x){
+
+       int low = 0; 
+       int high = a.length - 1; 
+
+       int mid; 
+
+       while(low<=high) {
+
+         mid=(low+high)/2;
+         // mid = low + ((high-low)/2); // won't overflow
+
+
+         int compareResult = a[mid].compareTo(x);
+
+         if(compareResult < 0){
+          //a[mid] is smalller, so x is larger
+          low = mid + 1; 
+         }else if(a > 0){
+           //a[mid] is larger, so x is smalller
+           high = mid - 1;
+         } else{
+           return mid;
+         }
+       } 
+    }
+}
