@@ -1,0 +1,29 @@
+//Find second smallest number
+public class FindMin {
+    // returns the location of the first occurance of the minimum value in the array
+    public static int findMin(int[] a) {
+        int locMin = 0;
+        
+        for(int i = 1; i<a.length;i++) {
+            if(a[i] < a[locMin]) {
+                locMin = i;
+            }
+        }
+
+        int locMinS = 0;
+
+        for(int i = 1; i<a.length;i++) {
+            if (a[i] == a[locMin]){continue;}
+
+            else if (a[i] < a[locMinS]) {
+                locMinS = i;
+            }
+        }
+        return a[locMinS];
+    
+    }
+    public static void main(String[] args) {
+        int[] values = {55, 21, 10, 85, 8, 47};
+        System.out.println(findMin(values));
+    }
+}
