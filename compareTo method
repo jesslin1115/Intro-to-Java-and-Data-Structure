@@ -1,0 +1,35 @@
+import java.util.Arrays; 
+
+public class CompareStuff{
+
+    public static void main(String[] args) {
+
+        String a = "hello"; 
+        String b = "aardvark"; 
+
+        System.out.println(a.compareTo(b)); 
+        // a = implicit parameter, b = explicitive parameter 
+        // return 0, pos or neg number 
+        // will return pos 
+
+        System.out.println(b.compareTo(a)); 
+        //will return neg 
+
+        System.out.println(a.compareTo(a)); 
+        //will return 0 
+
+        String[] array = new String[4]; 
+        array[0] =  "hello"; 
+        array[1] = "aardvark"; 
+        array[2] = "chicken"; 
+        array[3] = "cupcake";  
+
+        Arrays.sort(array); 
+
+        for(String i: array){
+            System.out.println(i);
+        }
+
+    }
+
+}
