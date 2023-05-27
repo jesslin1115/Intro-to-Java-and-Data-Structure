@@ -1,0 +1,45 @@
+import java.util.*; // REMOVE
+public class Palindrome implements PalindromeInterface
+{
+  private Stack<Character> stack; // CHANGE TO MYSTACK
+    
+    public Palindrome()
+    {
+     this.stack = new Stack<Character>(); // CHANGE TO MYSTACK
+    }
+    
+    public boolean isPalindrome(String x){
+     x = x.replaceAll("\\s", ""); // takes all spaces out of the string
+            x = x.toLowerCase(); // modifies string to all lowercase
+            //push each character to the stack
+            for(int i = 0; i < x.length(); i++)
+            {
+                stack.push(x.charAt(i));
+            }
+            //iterate through each character of original string, compare
+            //to popped character off stack, return true at end
+            for(int i = 0; i < x.length(); i++)
+            {
+                if(stack.pop() != x.charAt(i))
+                {
+                    return false;
+                }
+            }
+            return true;
+    }
+    public static void main(String[] args)
+    {
+        Palindrome p = new Palindrome();
+        System.out.println(p.isPalindrome("Hann   a h"));
+        System.out.println(p.isPalindrome("Do geese see god"));
+        System.out.println(p.isPalindrome("ban ana"));
+        System.out.println(p.isPalindrome("Ege"));
+    }
+}
+
+
+public interface PalindromeInterface {
+
+    public boolean isPalindrome(String x);
+
+}
