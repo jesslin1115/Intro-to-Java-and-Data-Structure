@@ -1,0 +1,41 @@
+
+//Enqueue (Adding an item to a fixed size queue that wraps around)
+static void(int x){
+  //To ensure the queue is not fill before adding 
+  if(size == q.length){
+    throw new QueueOverflowException;
+  }
+  /* The new value added will wrap around the queue
+    e.g. if queue's length is 10 and old tail is at index 9, 
+    10%10 = 0; the new tail will be at index 0 */ 
+  q.tail = (q.tail+1) % q.length
+  
+  // Set index of new tail.value to the new value we want to add
+  q[q.tail] = x; 
+
+  //increment size by 1
+  size ++;
+}
+
+//Dequeue (Removing an item from a fixed size queue - first in first out)
+public int dequeue(){ 
+
+  // If there is nothing in the queue, we cannot remove anything
+  if(size==0){
+    throw new QueueUnderflowException; 
+  }
+
+  // Set temp varible to the value that will be removed
+  int temp = q[head]; 
+
+  /* Set a new head; if head was at index 9, new head will  be 
+  index 0 when we remove the value at index 9 */ 
+  q.head = (q.head+1) %q.length; 
+
+  // decrement size by 1 
+  size -- ; 
+  
+  // Return value removed from the queue (first item in)
+  return temp; 
+  
+}
