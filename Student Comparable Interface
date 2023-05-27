@@ -1,0 +1,23 @@
+ public class Student implements Comparable<Student>{ 
+
+    private String name; 
+    private int final_score; 
+
+    public Student(String name, int grade){
+        this.name = name; 
+        final_score = grade; 
+
+    }
+
+    public String toString(){
+        return name + ": " + final_score; 
+
+    }
+
+    public int compareTo(Student other){
+
+        return final_score - other.final_score; 
+    }
+
+
+}
