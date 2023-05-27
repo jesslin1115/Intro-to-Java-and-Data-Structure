@@ -51,3 +51,31 @@ public class Tree<E> {
         }
     }
 }
+
+public class TreeTester{ 
+
+  public static void main(String[] args) {
+    Tree<String> tree = new Tree<>("a");
+    Tree.GeneralTreeNode<String> b = new Tree.GeneralTreeNode<>("b");
+    Tree.GeneralTreeNode<String> c = new Tree.GeneralTreeNode<>("c");
+    Tree.GeneralTreeNode<String> d = new Tree.GeneralTreeNode<>("d");
+    Tree.GeneralTreeNode<String> e = new Tree.GeneralTreeNode<>("e");
+    Tree.GeneralTreeNode<String> f = new Tree.GeneralTreeNode<>("f");
+    Tree.GeneralTreeNode<String> g = new Tree.GeneralTreeNode<>("g");
+    Tree.GeneralTreeNode<String> i = new Tree.GeneralTreeNode<>("i");
+    Tree.GeneralTreeNode<String> j = new Tree.GeneralTreeNode<>("j");
+    tree.addNode(tree.getRoot(), b);
+    tree.addNode(tree.getRoot(), c);
+    tree.addNode(tree.getRoot(), d);
+    tree.addNode(b, e);
+    tree.addNode(b, f);
+    tree.addNode(b, g);
+    tree.addNode(g, i);
+    tree.addNode(g, j);
+    System.out.println("Pre-order traversal:");
+    tree.preOrderTraversal(tree.getRoot());
+    System.out.println("Post-order traversal:");
+    tree.postOrderTraversal(tree.getRoot());
+  }
+
+}
