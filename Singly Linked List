@@ -1,0 +1,151 @@
+public class SinglyLinkedList<AnyType> implements Iterable<AnyType> {
+
+    private Node<AnyType> head;
+    private int size;
+
+    public SinglyLinkedList() {
+        head = null;
+        size = 0;
+    }
+
+    public int size() {
+        return size;
+    }
+
+    public boolean isEmpty() {
+        return size == 0;
+    }
+
+    public void clear() {
+        head = null;
+        size = 0;
+    }
+
+    public void add(AnyType data) {
+        add(size, data);
+    }
+
+    public void add(int index, AnyType data) {
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException();
+        }
+
+        if (index == 0) {
+            head = new Node<>(data, head);
+        } else {
+            Node<AnyType> previous = getNode(index - 1);
+            Node<AnyType> newNode = new Node<>(data, previous.next);
+            previous.next = newNode;
+        }
+
+        size++;
+    }
+
+    public AnyType get(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException();
+        }
+
+        Node<AnyType> node = getNode(index);
+        return node.data;
+    }
+
+    public AnyType set(int index, AnyType data) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException();
+        }
+
+        Node<AnyType> node = getNode(index);
+        AnyType oldValue = node.data;
+        node.data = data;
+        return oldValue;
+    }
+
+    public AnyType remove(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException();
+        }
+
+        AnyType oldValue;
+        if (index == 0) {
+            oldValue = head.data;
+            head = head.next;
+        } else {
+            Node<AnyType> previous = getNode(index - 1);
+            Node<AnyType> current = previous.next;
+            oldValue = current.data;
+            previous.next = current.next;
+        }
+
+        size--;
+        return oldValue;
+    }
+
+    private Node<AnyType> getNode(int index) {
+        Node<AnyType> current = head;
+        for (int i = 0; i < index; i++) {
+            current = current.next;
+        }
+        return current;
+    }
+
+    public String toString() {
+        StringBuilder sb = new StringBuilder("[");
+        Node<AnyType> current = head;
+        while (current != null) {
+            sb.append(current.data);
+            if (current.next != null) {
+                sb.append(", ");
+            }
+            current = current.next;
+        }
+        sb.append("]");
+        return sb.toString();
+    }
+
+    public java.util.Iterator<AnyType> iterator() {
+        return new LinkedListIterator();
+    }
+
+    private class LinkedListIterator implements java.util.Iterator<AnyType> {
+
+        private Node<AnyType> current = head;
+        private Node<AnyType> previous = null;
+
+        public boolean hasNext() {
+            return current != null;
+        }
+
+        public AnyType next() {
+            if (!hasNext()) {
+                throw new java.util.NoSuchElementException();
+            }
+
+            AnyType nextItem = current.data;
+            previous = current;
+            current = current.next;
+            return nextItem;
+        }
+
+        public void remove() {
+            if (previous == null) {
+                throw new IllegalStateException();
+            }
+
+            Node<AnyType> nodeToRemove = previous.next;
+            previous.next = nodeToRemove.next;
+            size--;
+        }
+    }
+
+    private static class Node<AnyType> {
+        public AnyType data;
+        public Node<AnyType> next;
+
+        public Node(AnyType data, Node<AnyType> next) {
+        this.data = data;
+        this.next = next;
+     }
+    }
+
+}
