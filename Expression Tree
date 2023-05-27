@@ -1,0 +1,74 @@
+
+import java.util.Stack;
+
+public class ExpressionTree {
+    private Node root;
+
+    private static class Node {
+        String value;
+        Node left;
+        Node right;
+
+        Node(String value) {
+            this.value = value;
+            this.left = null;
+            this.right = null;
+        }
+
+        Node(String value, Node left, Node right) {
+            this.value = value;
+            this.left = left;
+            this.right = right;
+        }
+
+        boolean isLeaf() {
+            return left == null && right == null;
+        }
+    }
+
+    public ExpressionTree(String expression) {
+        Stack<Node> stack = new Stack<>();
+        String[] tokens = expression.split(" ");
+        for (String token : tokens) {
+            if (token.equals("+") || token.equals("-") || token.equals("*") || token.equals("/")) {
+                Node right = stack.pop();
+                Node left = stack.pop();
+                stack.push(new Node(token, left, right));
+            } else {
+                stack.push(new Node(token));
+            }
+        }
+        root = stack.pop();
+    }
+
+    public double evaluate() {
+        return evaluate(root);
+    }
+
+    private double evaluate(Node node) {
+        if (node.isLeaf()) {
+            return Double.parseDouble(node.value);
+        }
+        double left = evaluate(node.left);
+        double right = evaluate(node.right);
+        switch (node.value) {
+            case "+":
+                return left + right;
+            case "-":
+                return left - right;
+            case "*":
+                return left * right;
+            case "/":
+                return left / right;
+            default:
+                throw new IllegalArgumentException("Invalid operator: " + node.value);
+        }
+    }
+
+    
+    public static void main(String[] args) {
+    ExpressionTree tree = new ExpressionTree("3 4 5 - 6 * +");
+    double result = tree.evaluate();
+    System.out.println(result);
+  }
+}
