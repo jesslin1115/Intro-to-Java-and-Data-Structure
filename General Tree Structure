@@ -1,0 +1,53 @@
+public class Tree<E> {
+    private GeneralTreeNode<E> root;
+
+    public Tree(E data) {
+        root = new GeneralTreeNode<>(data);
+    }
+
+    public GeneralTreeNode<E> getRoot() {
+        return root;
+    }
+
+    public void addNode(GeneralTreeNode<E> parent, GeneralTreeNode<E> child) {
+        if (parent.firstChild == null) {
+            parent.firstChild = child;
+        } else {
+            GeneralTreeNode<E> sibling = parent.firstChild;
+            while (sibling.firstSibling != null) {
+                sibling = sibling.firstSibling;
+            }
+            sibling.firstSibling = child;
+        }
+    }
+
+    public void preOrderTraversal(GeneralTreeNode<E> node) {
+        if (node != null) {
+            System.out.println(node.getData());
+            preOrderTraversal(node.firstChild);
+            preOrderTraversal(node.firstSibling);
+        }
+    }
+
+    public void postOrderTraversal(GeneralTreeNode<E> node) {
+        if (node != null) {
+            postOrderTraversal(node.firstChild);
+            System.out.println(node.getData());
+            postOrderTraversal(node.firstSibling);
+        }
+    }
+
+    public static class GeneralTreeNode<E> {
+        private E data;
+        GeneralTreeNode<E> firstChild;
+        GeneralTreeNode<E> firstSibling;
+
+        public GeneralTreeNode(E data) {
+            this.data = data;
+        }
+
+        public E getData() {
+            return data;
+        }
+    }
+}
